@@ -10,7 +10,11 @@
     "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
   },
   "dependencies": {
+    "@amcharts/amcharts4": "^4.9.3",
+    "@vue/composition-api": "^0.4.0",
     "core-js": "^3.6.4",
+    "plotly.js-dist": "^1.52.2",
+    "rough-viz": "^1.0.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
