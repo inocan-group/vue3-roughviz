@@ -1,31 +1,36 @@
 <template>
-  <div class="chartdiv"></div>
+  <div ref="chartdiv"></div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from '@vue/composition-api'
+import { defineComponent, onMounted, ref, watch } from '@vue/composition-api'
 import { Donut } from 'rough-viz'
+import { useCommonChartOptions, useCommonPieChartOptions } from '@/composables/rough-viz'
 
 export default defineComponent({
-  setup() {
+  props: {
+    ...useCommonChartOptions(),
+    ...useCommonPieChartOptions(),
+  },
+  setup(props) {
+    const chartdiv = ref(null)
+    const uid = 'chartdiv' + Date.now()
+
     onMounted(() => {
-      new Donut({
-        element: '.chartdiv',
-        legend: false,
-        data: {
-          labels: ['JNCO Jeans', 'Sweat Pants', 'Jorts'],
-          values: [20, 10, 2],
-        },
-        title: 'Pants I Got Clowned On For Wearing In High School',
-        titleFontSize: '2rem',
-        labels: 'letter',
-        values: 'frequency',
-        width: window.innerWidth,
-        stroke: 'coral',
-        color: 'pink',
-        fillWeight: 1.5,
+      const el = (chartdiv.value as unknown) as HTMLElement
+      el.id = uid
+
+      watch(() => {
+        el.innerHTML = ''
+
+        new Donut({
+          element: `#${el.id}`,
+          ...props,
+        })
       })
     })
+
+    return { chartdiv }
   },
 })
 </script>
