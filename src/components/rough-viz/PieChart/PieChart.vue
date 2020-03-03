@@ -1,29 +1,36 @@
 <template>
-  <div class="chartdiv"></div>
+  <div ref="chartdiv"></div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from '@vue/composition-api'
+import { defineComponent, onMounted, ref, watch } from '@vue/composition-api'
 import { Pie } from 'rough-viz'
+import { useCommonChartOptions, useCommonPieChartOptions } from '@/composables/rough-viz'
 
 export default defineComponent({
-  setup() {
+  props: {
+    ...useCommonChartOptions(),
+    ...useCommonPieChartOptions(),
+  },
+  setup(props) {
+    const chartdiv = ref(null)
+    const uid = 'chartdiv' + Date.now()
+
     onMounted(() => {
-      new Pie({
-        element: '.chartdiv',
-        title: 'Was it useful?',
-        titleFontSize: '1.5rem',
-        legend: false,
-        margin: { top: 50, bottom: 100, left: 40, right: 100 },
-        data: {
-          labels: ['useful', 'no', 'lol idk man'],
-          values: [2, 8, 4],
-        },
-        strokeWidth: 3,
-        fillStyle: 'zigzag-line',
-        highlight: 'gold',
+      const el = (chartdiv.value as unknown) as HTMLElement
+      el.id = uid
+
+      watch(() => {
+        el.innerHTML = ''
+
+        new Pie({
+          element: `#${el.id}`,
+          ...props,
+        })
       })
     })
+
+    return { chartdiv }
   },
 })
 </script>
