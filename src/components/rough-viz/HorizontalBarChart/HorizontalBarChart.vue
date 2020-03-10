@@ -5,12 +5,12 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref, watch } from '@vue/composition-api'
 import { BarH } from 'rough-viz'
-import { useCommonChartOptions, useCommonBarChartOptions } from '@/composables/rough-viz'
+import { commonChartOptions, commonBarChartOptions } from '@/shared/rough-viz'
 
 export default defineComponent({
   props: {
-    ...useCommonChartOptions(),
-    ...useCommonBarChartOptions(),
+    ...commonChartOptions,
+    ...commonBarChartOptions,
   },
   setup(props) {
     const chartdiv = ref(null)

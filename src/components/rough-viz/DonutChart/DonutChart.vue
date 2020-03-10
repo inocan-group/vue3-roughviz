@@ -5,12 +5,12 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref, watch } from '@vue/composition-api'
 import { Donut } from 'rough-viz'
-import { useCommonChartOptions, useCommonPieChartOptions } from '@/composables/rough-viz'
+import { commonChartOptions, commonPieChartOptions } from '@/shared/rough-viz'
 
 export default defineComponent({
   props: {
-    ...useCommonChartOptions(),
-    ...useCommonPieChartOptions(),
+    ...commonChartOptions,
+    ...commonPieChartOptions,
   },
   setup(props) {
     const chartdiv = ref(null)
