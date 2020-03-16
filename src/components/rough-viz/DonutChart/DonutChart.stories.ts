@@ -6,8 +6,8 @@ export default { title: 'rough-viz/DonutChart', decorators: [withKnobs] }
 export const example1 = () => ({
   components: { DonutChart },
   props: {
-    data: {
-      default: object('data', {
+    chartData: {
+      default: object('chartData', {
         labels: ['a', 'b'],
         values: [10, 20],
       }),
@@ -22,8 +22,8 @@ export const example2 = () => ({
     legend: {
       default: boolean('legend', false),
     },
-    data: {
-      default: object('data', {
+    chartData: {
+      default: object('chartData', {
         labels: ['JNCO Jeans', 'Sweat Pants', 'Jorts'],
         values: [20, 10, 2],
       }),

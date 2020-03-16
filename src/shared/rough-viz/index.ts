@@ -2,18 +2,24 @@ const axisOptions = {
   axisFontSize: String,
   axisRoughness: Number,
   axisStrokeWidth: Number,
+  xLabel: String,
+  yLabel: String,
 }
 
 const legendOptions = {
-  legend: Boolean,
+  legend: { type: Boolean, default: true },
   legendPosition: String,
 }
 
-export const commonChartOptions = {
+const commonChartOptions = {
+  chartData: {
+    type: [Object, String],
+    required: true,
+  },
   title: String,
   titleFontSize: String,
   tooltipFontSize: String,
-  font: String,
+  font: { type: [String, Number] },
   fillStyle: String,
   fillWeight: Number,
   roughness: Number,
@@ -23,38 +29,89 @@ export const commonChartOptions = {
   width: Number,
   height: Number,
   margin: Object,
+  strokeWidth: Number,
 }
 
-export const commonBarChartOptions = {
+const commonBarChartOptions = {
   ...axisOptions,
-  data: {
-    type: [Object, String],
-    required: true,
-  },
   labels: String,
   values: String,
-  color: String,
   highlight: String,
   innerStrokeWidth: Number,
   labelFontSize: String,
   padding: Number,
   stroke: String,
-  strokeWidth: Number,
-  xLabel: String,
-  yLabel: String,
 }
 
-export const commonPieChartOptions = {
+const commonPieChartOptions = {
   ...legendOptions,
-  data: {
-    type: [Object, String],
-    required: true,
-  },
   labels: String,
   values: String,
   colors: Array,
   highlight: String,
   innerStrokeWidth: Number,
   padding: Number,
-  strokeWidth: Number,
 }
+
+const commonLineScatterChartOptions = {
+  ...axisOptions,
+  colors: { type: [Array, String] },
+  labelFontSize: String,
+  stroke: String,
+}
+
+export const barChartOptions = {
+  ...commonChartOptions,
+  ...commonBarChartOptions,
+  color: String,
+}
+
+export const stackedBarChartOptions = {
+  ...commonChartOptions,
+  ...commonBarChartOptions,
+  colors: Array,
+  chartData: Array,
+  labels: String,
+}
+
+export const pieChartOptions = {
+  ...commonChartOptions,
+  ...commonPieChartOptions,
+}
+
+export const lineChartOptions = {
+  ...commonChartOptions,
+  ...commonLineScatterChartOptions,
+  ...legendOptions,
+  chartData: { type: String, required: true },
+  y: String,
+  circle: { type: Boolean, default: true },
+  circleRadius: Number,
+  circleRoughness: Number,
+}
+
+export const scatterChartOptions = {
+  ...commonChartOptions,
+  ...commonLineScatterChartOptions,
+  x: String,
+  y: String,
+  colorVar: String,
+  curbZero: Boolean,
+  highlight: String,
+  highlightLabel: String,
+  innerStrokeWidth: Number,
+  radius: { type: [Number, Array] },
+}
+
+export type IBarChartOptions = typeof barChartOptions
+export type IStackedBarChartOptions = typeof stackedBarChartOptions
+export type IPieChartOptions = typeof pieChartOptions
+export type ILineChartOptions = typeof lineChartOptions
+export type IScatterChartOptions = typeof scatterChartOptions
+
+export type IChartOptions =
+  | IBarChartOptions
+  | IStackedBarChartOptions
+  | IPieChartOptions
+  | ILineChartOptions
+  | IScatterChartOptions

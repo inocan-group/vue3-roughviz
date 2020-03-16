@@ -6,8 +6,8 @@ export default { title: 'rough-viz/BarChart', decorators: [withKnobs] }
 export const example1 = () => ({
   components: { BarChart },
   props: {
-    data: {
-      default: object('data', {
+    chartData: {
+      default: object('chartData', {
         labels: ['a', 'b'],
         values: [10, 20],
       }),
@@ -19,9 +19,9 @@ export const example1 = () => ({
 export const example2 = () => ({
   components: { BarChart },
   props: {
-    data: {
+    chartData: {
       default: text(
-        'data',
+        'chartData',
         'https://gist.githubusercontent.com/mbostock/3310560/raw/98311dc46685ed02588afdcb69e5fa296febc1eb/letter-frequency.tsv',
       ),
     },
@@ -29,10 +29,10 @@ export const example2 = () => ({
       default: text('title', 'Letters'),
     },
     labels: {
-      default: text('labels', 'Letters'),
+      default: text('labels', 'letter'),
     },
     values: {
-      default: text('values', 'Letters'),
+      default: text('values', 'frequency'),
     },
     width: {
       default: number('width', window.innerWidth),

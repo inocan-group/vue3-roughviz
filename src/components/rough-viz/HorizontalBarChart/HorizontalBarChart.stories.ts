@@ -6,8 +6,8 @@ export default { title: 'rough-viz/HorizontalBarChart', decorators: [withKnobs] 
 export const example1 = () => ({
   components: { HorizontalBarChart },
   props: {
-    data: {
-      default: object('data', {
+    chartData: {
+      default: object('chartData', {
         labels: ['a', 'b'],
         values: [10, 20],
       }),
@@ -19,8 +19,8 @@ export const example1 = () => ({
 export const example2 = () => ({
   components: { HorizontalBarChart },
   props: {
-    data: {
-      default: object('data', {
+    chartData: {
+      default: object('chartData', {
         labels: ['1992 Ford Aerostar Van', '2013 Kia Rio', '1980 Honda CB 125s', '1992 Toyota Tercel'],
         values: [8, 4, 6, 2],
       }),
@@ -53,8 +53,8 @@ export const example2 = () => ({
 export const example3 = () => ({
   components: { HorizontalBarChart },
   props: {
-    data: {
-      default: text('data', 'https://raw.githubusercontent.com/jwilber/random_data/master/owTanks.csv'),
+    chartData: {
+      default: text('chartData', 'https://raw.githubusercontent.com/jwilber/random_data/master/owTanks.csv'),
     },
     title: {
       default: text('title', 'Overwatch Tank Health'),

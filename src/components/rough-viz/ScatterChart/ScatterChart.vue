@@ -4,16 +4,16 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { Donut } from 'rough-viz'
-import { pieChartOptions, IPieChartOptions } from '@/shared/rough-viz'
+import { Scatter } from 'rough-viz'
+import { scatterChartOptions, IScatterChartOptions } from '@/shared/rough-viz'
 import { useSetupRoughVizChart } from '@/composables/rough-viz'
 
 export default defineComponent({
   props: {
-    ...pieChartOptions,
+    ...scatterChartOptions,
   },
   setup(props) {
-    const chartdiv = useSetupRoughVizChart<IPieChartOptions>(Donut, props)
+    const chartdiv = useSetupRoughVizChart<IScatterChartOptions>(Scatter, props)
 
     return { chartdiv }
   },

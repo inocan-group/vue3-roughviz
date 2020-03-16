@@ -3,32 +3,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, watch } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 import { Bar } from 'rough-viz'
-import { commonChartOptions, commonBarChartOptions } from '@/shared/rough-viz'
+import { barChartOptions, IBarChartOptions } from '@/shared/rough-viz'
+import { useSetupRoughVizChart } from '@/composables/rough-viz'
 
 export default defineComponent({
   props: {
-    ...commonChartOptions,
-    ...commonBarChartOptions,
+    ...barChartOptions,
   },
   setup(props) {
-    const chartdiv = ref(null)
-    const uid = 'chartdiv' + Date.now()
-
-    onMounted(() => {
-      const el = (chartdiv.value as unknown) as HTMLElement
-      el.id = uid
-
-      watch(() => {
-        el.innerHTML = ''
-
-        new Bar({
-          element: `#${el.id}`,
-          ...props,
-        })
-      })
-    })
+    const chartdiv = useSetupRoughVizChart<IBarChartOptions>(Bar, props)
 
     return { chartdiv }
   },

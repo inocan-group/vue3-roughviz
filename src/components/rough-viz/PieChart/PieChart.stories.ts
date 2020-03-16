@@ -6,8 +6,8 @@ export default { title: 'rough-viz/PieChart', decorators: [withKnobs] }
 export const example1 = () => ({
   components: { PieChart },
   props: {
-    data: {
-      default: object('data', {
+    chartData: {
+      default: object('chartData', {
         labels: ['a', 'b'],
         values: [10, 20],
       }),
@@ -22,8 +22,8 @@ export const example2 = () => ({
     legend: {
       default: boolean('legend', false),
     },
-    data: {
-      default: object('data', {
+    chartData: {
+      default: object('chartData', {
         labels: ['useful', 'no', 'lol idk man'],
         values: [2, 8, 4],
       }),
