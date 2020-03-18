@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { onMounted, ref, watch } from '@vue/composition-api'
+import { onMounted, ref, watchEffect } from '@vue/composition-api'
 import { ExtractPropTypes } from '@/shared/util'
 import { IChartOptions } from '@/shared/rough-viz'
 
@@ -18,7 +18,7 @@ export const useSetupRoughVizChart = <T extends IChartOptions = never>(
     const el = chartdiv.value as HTMLElement
     el.id = uid
 
-    watch(() => {
+    watchEffect(() => {
       const { chartData, ...otherOpts } = opts
       el.innerHTML = ''
 
