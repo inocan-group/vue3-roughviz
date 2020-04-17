@@ -5,7 +5,7 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import { BarH } from 'rough-viz'
-import { barChartOptions, IBarChartOptions } from '@/shared/rough-viz'
+import { barChartOptions } from '@/shared'
 import { useSetupRoughVizChart } from '@/composables/rough-viz'
 
 export default defineComponent({
@@ -13,7 +13,7 @@ export default defineComponent({
     ...barChartOptions,
   },
   setup(props) {
-    const chartdiv = useSetupRoughVizChart<IBarChartOptions>(BarH, props)
+    const chartdiv = useSetupRoughVizChart(BarH, props)
 
     return { chartdiv }
   },

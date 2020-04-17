@@ -5,7 +5,7 @@
 <script lang="ts">
 import { defineComponent, computed } from '@vue/composition-api'
 import { Line } from 'rough-viz'
-import { lineChartOptions, ILineChartOptions } from '@/shared/rough-viz'
+import { lineChartOptions } from '@/shared'
 import { useSetupRoughVizChart } from '@/composables/rough-viz'
 
 export default defineComponent({
@@ -28,7 +28,7 @@ export default defineComponent({
       return { ...props, ...ys }
     })
 
-    const chartdiv = useSetupRoughVizChart<ILineChartOptions>(Line, opts.value)
+    const chartdiv = useSetupRoughVizChart(Line, opts.value)
 
     return { chartdiv }
   },
