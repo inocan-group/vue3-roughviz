@@ -4,16 +4,16 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { BarH } from 'rough-viz'
-import { barChartOptions } from '@/shared'
-import { useSetupRoughVizChart } from '@/composables/rough-viz'
+import { Scatter } from 'rough-viz'
+import { scatterChartOptions } from '@/shared'
+import { useSetupRoughVizChart } from '@/composables'
 
 export default defineComponent({
   props: {
-    ...barChartOptions,
+    ...scatterChartOptions,
   },
   setup(props) {
-    const chartdiv = useSetupRoughVizChart(BarH, props)
+    const chartdiv = useSetupRoughVizChart(Scatter, props)
 
     return { chartdiv }
   },
