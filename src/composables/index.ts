@@ -7,7 +7,7 @@ interface IChartConstructor<T extends IChart> {
 }
 
 export const useSetupRoughVizChart = <T extends IChart>(Ctor: IChartConstructor<T>, opts: T) => {
-  const chartdiv = ref<HTMLElement>(null)
+  const chartdiv = ref<HTMLElement | null>(null)
   const uid = 'chartdiv' + Date.now()
 
   onMounted(() => {
