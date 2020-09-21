@@ -19,6 +19,8 @@
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
     "lint": "vue-cli-service lint",
+    "docs:serve": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
     "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
     "storybook:debug": "run-p vue-devtools storybook:serve"
@@ -47,6 +49,7 @@
     "@vue/devtools": "^5.3.3",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^5.0.1",
+    "@vuepress/plugin-register-components": "^1.5.4",
     "babel-loader": "^8.1.0",
     "core-js": "^3.6.4",
     "cross-env": "^7.0.2",
@@ -64,7 +67,9 @@
     "typescript": "~4.0.3",
     "vue": "^2.6.11",
     "vue-cli-plugin-storybook": "~1.2.1",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.5.4",
+    "vuepress-plugin-typescript": "^0.3.1"
   },
   "peerDependencies": {
     "@vue/composition-api": "1.0.0-beta.14",
