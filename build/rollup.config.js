@@ -23,7 +23,7 @@ const argv = minimist(process.argv.slice(2))
 const projectRoot = path.resolve(__dirname, '..')
 
 const baseConfig = {
-  input: 'src/entry.ts',
+  input: 'src/components/index.ts',
   plugins: {
     preVue: [
       alias({
@@ -56,6 +56,7 @@ const external = [
   // list external dependencies, exactly the way it is written in the import statement.
   // eg. 'jquery'
   ...Object.keys(pkg.peerDependencies ? pkg.peerDependencies : {}),
+  ...Object.keys(pkg.optionalDependencies ? pkg.optionalDependencies : {}),
 ]
 
 // UMD/IIFE shared settings: output.globals

@@ -6,7 +6,7 @@ module.exports = {
     [
       '@vuepress/register-components',
       {
-        componentsDir: path.resolve(__dirname, '../../src/lib-components'),
+        componentsDir: path.resolve(__dirname, '../../src/components'),
       },
     ],
   ],
