@@ -7,11 +7,17 @@ export default Vue.extend({
   components: {
     BarChart,
   },
+  data: () => ({
+    chartData: {
+      labels: ['a', 'b'],
+      values: [10, 20],
+    },
+  }),
 })
 </script>
 
 <template>
   <div id="app">
-    <bar-chart />
+    <bar-chart :chartData="chartData" />
   </div>
 </template>
