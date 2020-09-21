@@ -1,4 +1,5 @@
 import _Vue, { PluginFunction } from 'vue'
+import VueCompositionApi from '@vue/composition-api'
 
 // Import vue components
 import * as components from '@/lib-components/index'
@@ -10,12 +11,21 @@ interface InstallFunction extends PluginFunction<any> {
 }
 
 // install function executed by Vue.use()
-const install: InstallFunction = function installVueRoughviz(Vue: typeof _Vue) {
+const install: InstallFunction = function installVueRoughviz(
+  Vue: typeof _Vue,
+  options?: { registerComponents: boolean },
+) {
   if (install.installed) return
   install.installed = true
-  Object.entries(components).forEach(([componentName, component]) => {
-    Vue.component(componentName, component)
-  })
+  // install the composition api plugin if it hasn't been installed already
+  if (!Object.hasOwnProperty.call(Vue, '__composition_api_installed__')) {
+    VueCompositionApi.install(Vue)
+  }
+  if (options?.registerComponents) {
+    Object.entries(components).forEach(([componentName, component]) => {
+      Vue.component(componentName, component)
+    })
+  }
 }
 
 // Create module definition for Vue.use()

@@ -23,9 +23,6 @@
     "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
     "storybook:debug": "run-p vue-devtools storybook:serve"
   },
-  "dependencies": {
-    "@vue/composition-api": "1.0.0-beta.14"
-  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
@@ -48,6 +45,7 @@
     "@vue/devtools": "^5.3.3",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^5.0.1",
+    "@vue/composition-api": "1.0.0-beta.14",
     "core-js": "^3.6.4",
     "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
@@ -67,8 +65,9 @@
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
-    "rough-viz": "^1.0.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "@vue/composition-api": "1.0.0-beta.14",
+    "rough-viz": "^1.0.5"
   },
   "engines": {
     "node": ">=10"

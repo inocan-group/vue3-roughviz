@@ -9,6 +9,7 @@ import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 import minimist from 'minimist'
 import resolve from '@rollup/plugin-node-resolve'
+import pkg from '../package.json'
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs
@@ -54,8 +55,7 @@ const baseConfig = {
 const external = [
   // list external dependencies, exactly the way it is written in the import statement.
   // eg. 'jquery'
-  'vue',
-  'rough-viz',
+  ...Object.keys(pkg.peerDependencies ? pkg.peerDependencies : {}),
 ]
 
 // UMD/IIFE shared settings: output.globals
@@ -64,6 +64,7 @@ const globals = {
   // Provide global variable names to replace your external imports
   // eg. jquery: '$'
   vue: 'Vue',
+  '@vue/composition-api': 'VueCompositionAPI',
   'rough-viz': 'roughViz',
 }
 

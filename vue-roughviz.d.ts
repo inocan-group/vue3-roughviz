@@ -1,11 +1,16 @@
-import Vue, { PluginFunction, VueConstructor } from 'vue';
-
+import Vue, { PluginFunction, VueConstructor } from 'vue'
 
 interface InstallFunction extends PluginFunction<any> {
-  installed?: boolean;
+  installed?: boolean
 }
 
-declare const VueRoughviz: { install: InstallFunction };
-export default VueRoughviz;
+declare const VueRoughviz: { install: InstallFunction }
+export default VueRoughviz
 
-export const VueRoughvizSample: VueConstructor<Vue>;
+export const BarChart: VueConstructor<Vue>
+export const DonutChart: VueConstructor<Vue>
+export const HorizontalBarChart: VueConstructor<Vue>
+export const LineChart: VueConstructor<Vue>
+export const PieChart: VueConstructor<Vue>
+export const ScatterChart: VueConstructor<Vue>
+export const StackedBarChart: VueConstructor<Vue>
