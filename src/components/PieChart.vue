@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue'
 import { Pie } from 'rough-viz'
 import { pieChartOptions } from '@/shared'
 import { useSetupRoughVizChart } from '@/composables'

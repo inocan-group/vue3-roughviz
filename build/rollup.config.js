@@ -81,6 +81,7 @@ if (!argv.format || argv.format === 'es') {
       exports: 'named',
     },
     plugins: [
+      commonjs(),
       replace({
         ...baseConfig.plugins.replace,
         'process.env.ES_BUILD': JSON.stringify('true'),
@@ -99,7 +100,6 @@ if (!argv.format || argv.format === 'es') {
         ],
       }),
       resolve({ extensions: ['.js', '.ts'] }),
-      commonjs(),
     ],
   }
   buildFormats.push(esConfig)

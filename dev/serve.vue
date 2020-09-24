@@ -1,8 +1,8 @@
 <script lang="ts">
-import Vue from 'vue'
-import { BarChart } from '@/entry'
+import { defineComponent } from 'vue'
+import { BarChart } from '@/components/index'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'ServeDev',
   components: {
     BarChart,

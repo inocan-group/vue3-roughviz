@@ -2,26 +2,25 @@
   "name": "vue-roughviz",
   "version": "0.1.0",
   "description": "Use the fun and informal charting capabilities of Rough-Viz charting in Vue.js",
+  "scripts": {
+    "serve": "vue-cli-service serve dev/serve.ts",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "lint": "vue-cli-service lint",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "docs:build": "vuepress build docs",
+    "docs:serve": "vuepress dev docs"
+  },
   "main": "dist/vue-roughviz.ssr.js",
-  "browser": "dist/vue-roughviz.esm.js",
   "module": "dist/vue-roughviz.esm.js",
+  "browser": "dist/vue-roughviz.esm.js",
   "unpkg": "dist/vue-roughviz.min.js",
-  "types": "vue-roughviz.d.ts",
   "files": [
     "dist/*",
     "vue-roughviz.d.ts",
     "src/**/*.vue"
   ],
-  "scripts": {
-    "serve": "vue-cli-service serve dev/serve.ts",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
-    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-    "lint": "vue-cli-service lint",
-    "docs:serve": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
@@ -33,12 +32,11 @@
     "@typescript-eslint/eslint-plugin": "^4.1.1",
     "@typescript-eslint/parser": "^4.1.1",
     "@vue/babel-preset-app": "^4.5.6",
-    "@vue/cli-plugin-babel": "~4.2.0",
-    "@vue/cli-plugin-eslint": "~4.2.0",
-    "@vue/cli-plugin-typescript": "~4.2.0",
-    "@vue/cli-service": "~4.2.0",
-    "@vue/composition-api": "1.0.0-beta.14",
-    "@vue/devtools": "^5.3.3",
+    "@vue/cli-plugin-babel": "~4.5.6",
+    "@vue/cli-plugin-eslint": "~4.5.6",
+    "@vue/cli-plugin-typescript": "~4.5.6",
+    "@vue/cli-service": "~4.5.6",
+    "@vue/compiler-sfc": "^3.0.0-0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^5.0.1",
     "@vuepress/plugin-register-components": "^1.5.4",
@@ -51,22 +49,29 @@
     "minimist": "^1.2.5",
     "prettier": "^1.19.1",
     "rollup": "^2.7.3",
+    "rollup-plugin-analyzer": "^3.3.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^5.3.0",
-    "rollup-plugin-vue": "^5.1.6",
-    "rough-viz": "^1.0.5",
+    "rollup-plugin-typescript2": "^0.27.2",
+    "rollup-plugin-vue": "^6.0.0-beta.8",
+    "tsconfig-paths": "^3.9.0",
+    "ttypescript": "^1.5.12",
     "typescript": "~4.0.3",
-    "vue": "^2.6.11",
+    "typescript-transform-paths": "^2.0.1",
+    "vitepress": "^0.6.0",
+    "vue": "^3.0.0-0",
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.5.4",
     "vuepress-plugin-typescript": "^0.3.1"
   },
+  "dependencies": {
+    "rough-viz": "^1.0.5"
+  },
   "peerDependencies": {
-    "@vue/composition-api": "1.0.0-beta.14",
-    "rough-viz": "^1.0.5",
-    "vue": "^2.6.11"
+    "vue": "^3.0.0"
   },
   "engines": {
     "node": ">=10"
-  }
+  },
+  "types": "vue-roughviz.d.ts"
 }

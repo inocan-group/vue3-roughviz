@@ -1,4 +1,4 @@
-import { PropType } from '@vue/composition-api'
+import { PropType } from 'vue'
 
 const DEFAULT_LABEL_FONT_SIZE = '1rem'
 const DEFAULT_HIGHLIGHT = 'coral'
