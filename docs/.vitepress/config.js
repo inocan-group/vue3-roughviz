@@ -1,4 +1,4 @@
-const { ref } = require('vue')
+// const { ref } = require('vue')
 
 module.exports = {
   title: 'vue-roughviz',
@@ -16,6 +16,10 @@ module.exports = {
       {
         text: 'Install',
         link: '/',
+      },
+            {
+        text: 'Overview',
+        link: '/overview/',
       },
       {
         text: 'BarChart',

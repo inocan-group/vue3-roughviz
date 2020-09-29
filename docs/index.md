@@ -26,7 +26,7 @@ Both of these dependencies are brought together by the [`rough-viz`](https://git
 
 ### Reuse and Tree Shaking
 
-Because **D3** is a commonly used library and to promote as much reuse as possible, the D3 dependency is defined as an "optional dependency" ... it's not _actually_ optional but by stating it as such means both `npm` and `yarn` will automatically install D3 for you as a direct dependency of your application. This ensures that d3 is tree-shaken based on how your particular application uses D3. It also means that you can use this library in your own code if you state it as a dependency directly. This will ensure D3 is reused across your app and this library and that the overall D3 library is tree-shaken to remove only those parts which are actually being used.
+Because **D3** is a commonly used library and to promote as much reuse as possible, the D3 dependency is defined as an "optional dependency" ... it's not _actually_ optional but by stating it as such means both `npm` and `yarn` will automatically install D3 for you as a direct dependency of your application. This ensures that d3 is optimally tree-shaken based on how your particular applications usage. It also means that you can use this library in your own code if you state it as a dependency directly. This will ensure D3 is reused across your app and this library and that the overall D3 library is tree-shaken to remove only those parts which are actually being used.
 
 > **Note:** if you explicitly use D3, please be sure to use a `6.0.0` version of D3 (or greater) to ensure reuse is achieved
 
