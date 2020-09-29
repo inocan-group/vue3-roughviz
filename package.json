@@ -10,8 +10,8 @@
     "build": "run-s clear autoindex build:lib build:types",
     "build:lib": "node ./build/index cjs es",
     "build:types": "echo - Building types && ttsc -P tsconfig.es.json --outDir dist/types --declaration",
-    "build:docs": "vitepress build",
-    "docs": "vitepress dev docs",
+    "build:docs": "yarn vitepress build docs",
+    "docs": "yarn vitepress dev docs",
     "lint": "vue-cli-service lint"
   },
   "unpkg": "dist/cjs/index.min.js",
