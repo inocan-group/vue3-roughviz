@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "vue-roughviz": {
-      "signature": "2f0835032866a03ecb346fb8570abdff",
-      "file": true
-    }
-  }
-}
