@@ -3,6 +3,15 @@
 module.exports = {
   title: 'vue-roughviz',
   description: 'Use the fun and informal charting capabilities of Rough-Viz charting in Vue.js',
+  plugins: {
+    'vuepress-plugin-mermaidjs': true,
+  },
+
+  markdown: {
+    config: md => {
+      console.log('i made it')
+    },
+  },
 
   themeConfig: {
     enhanceApp: ctx => {
@@ -17,7 +26,7 @@ module.exports = {
         text: 'Install',
         link: '/',
       },
-            {
+      {
         text: 'Overview',
         link: '/overview/',
       },

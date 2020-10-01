@@ -12,6 +12,21 @@ In the following sections we will go through each chart type specifically but th
 
 ## Common Parameters
 
+``` mermaid
+sequenceDiagram
+participant App
+participant StateMgmt
+participant IndexedDb
+participant Firebase
+
+App->>IndexedDb: getProducts( [ 'abc', 'def' ] )
+activate IndexedDb
+IndexedDb->>IndexedDb: gets products from IDB
+IndexedDb->>StateMgmt: updates state
+IndexedDb->>App: Promise < Product[] >
+deactivate IndexedDb
+```
+
 ### Data
 
 The most important thing for any charting library is providing **data** so it can be visualized. As a user of the library you'll need to know both the _structure_ of the data as well as the _mechanism_ of passing it in. By default the structure and API method are exactly the same as what **roughViz** provides:

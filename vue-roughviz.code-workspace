@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "node_modules/vitepress"
+    }
+  ],
+  "settings": {
+    "vetur.format.defaultFormatter.js": "prettier-eslint",
+    "eslint.alwaysShowStatus": true,
+    "vetur.format.defaultFormatter.ts": "prettier",
+    "vetur.format.defaultFormatter.html": "prettier",
+    "vetur.completion.scaffoldSnippetSources": {
+      "workspace": "💼",
+      "user": "👤",
+      "vetur": ""
+    },
+    "typescript.tsdk": "node_modules/typescript/lib"
+  }
+}

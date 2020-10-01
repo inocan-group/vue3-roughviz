@@ -10,8 +10,9 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "baseUrl": ".",
+    "noEmit": true,
     "types": ["node", "vue"],
     "paths": {
       "@/*": ["src/*"]
