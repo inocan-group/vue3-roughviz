@@ -3,10 +3,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue'
 import { StackedBar } from 'rough-viz'
 import { stackedBarChartOptions } from '@/shared'
-import { useSetupRoughVizChart } from '@/composables/rough-viz'
+import { useSetupRoughVizChart } from '@/composables'
 
 export default defineComponent({
   props: {

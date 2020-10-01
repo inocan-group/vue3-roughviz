@@ -4,6 +4,7 @@
  */
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-types */
 type Prop<T, Required extends boolean> = PropOptions<T, Required> | PropType<T>
 
 interface PropOptions<T = any, Required extends boolean = false> {

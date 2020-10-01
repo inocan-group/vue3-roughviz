@@ -3,10 +3,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from '@vue/composition-api'
+import { defineComponent, computed } from 'vue'
 import { Line } from 'rough-viz'
 import { lineChartOptions } from '@/shared'
-import { useSetupRoughVizChart } from '@/composables/rough-viz'
+import { useSetupRoughVizChart } from '@/composables'
 
 export default defineComponent({
   props: {

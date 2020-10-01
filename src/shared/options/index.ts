@@ -1,4 +1,4 @@
-import { PropType } from '@vue/composition-api'
+import { PropType } from 'vue'
 
 const DEFAULT_LABEL_FONT_SIZE = '1rem'
 const DEFAULT_HIGHLIGHT = 'coral'
@@ -29,25 +29,25 @@ const legendOptions = {
   legend: { type: Boolean, default: true },
   legendPosition: {
     type: String as PropType<'left' | 'right'>,
-    default: 'right' as 'right',
+    default: 'right',
   },
 }
 
 const commonChartOptions = {
   chartData: {
     type: [Object, String] as PropType<Record<string, (string | number)[]> | string>,
-    required: true as true,
+    required: true,
   },
   title: String,
   titleFontSize: { type: String, default: '1rem' },
   tooltipFontSize: { type: String, default: '0.95rem' },
   font: {
     type: [String, Number] as PropType<'gaegu' | 'indie flower' | 0 | 1>,
-    default: 'gaegu' as 'gaegu',
+    default: 'gaegu',
   },
   fillStyle: {
     type: String as PropType<'hachure' | 'cross-hatch' | 'zigzag' | 'dashed' | 'solid' | 'zigzag-line'>,
-    default: 'hachure' as 'hachure',
+    default: 'hachure' as const,
   },
   fillWeight: Number,
   roughness: { type: Number, default: 1 },
@@ -98,8 +98,8 @@ export const stackedBarChartOptions = {
   ...commonChartOptions,
   ...commonBarChartOptions,
   colors: Array,
-  chartData: { type: Array as PropType<Record<string, string | number>[]>, required: true as true },
-  labels: { type: String, required: true as true },
+  chartData: { type: Array as PropType<Record<string, string | number>[]>, required: true as const },
+  labels: { type: String, required: true as const },
 }
 
 export const pieChartOptions = {
@@ -111,7 +111,7 @@ export const lineChartOptions = {
   ...commonChartOptions,
   ...commonLineScatterChartOptions,
   ...legendOptions,
-  chartData: { type: String, required: true as true },
+  chartData: { type: String, required: true as const },
   y: String,
   circle: { type: Boolean, default: true },
   circleRadius: { type: Number, default: 10 },

@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { onMounted, ref, watchEffect } from '@vue/composition-api'
+import { onMounted, ref, watchEffect, Ref } from 'vue'
 import { IChartConfig, IChart } from '@/@types'
 
 interface IChartConstructor<T extends IChart> {
   new (config: IChartConfig<T>): any
 }
 
-export const useSetupRoughVizChart = <T extends IChart>(Ctor: IChartConstructor<T>, opts: T) => {
-  const chartdiv = ref<HTMLElement>(null)
+export const useSetupRoughVizChart = <T extends IChart>(
+  Ctor: IChartConstructor<T>,
+  opts: T,
+): Ref<HTMLElement | null> => {
+  const chartdiv = ref<HTMLElement | null>(null)
   const uid = 'chartdiv' + Date.now()
 
   onMounted(() => {
