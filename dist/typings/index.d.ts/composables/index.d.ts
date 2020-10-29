@@ -1,5 +1,5 @@
 import { Ref } from 'vue';
-import { IChartConfig, IChart } from "../@types/index";
+import { IChartConfig, IChart } from '../@types';
 interface IChartConstructor<T extends IChart> {
     new (config: IChartConfig<T>): any;
 }

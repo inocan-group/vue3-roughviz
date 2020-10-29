@@ -1,4 +1,4 @@
-import { ExtractPropTypes, barChartOptions, stackedBarChartOptions, pieChartOptions, lineChartOptions, scatterChartOptions } from "../shared/index";
+import { ExtractPropTypes, barChartOptions, stackedBarChartOptions, pieChartOptions, lineChartOptions, scatterChartOptions } from '../shared';
 export declare type IBarChart = ExtractPropTypes<typeof barChartOptions>;
 export declare type IStackedBarChart = ExtractPropTypes<typeof stackedBarChartOptions>;
 export declare type IPieChart = ExtractPropTypes<typeof pieChartOptions>;

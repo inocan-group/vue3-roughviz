@@ -1,24 +1,25 @@
-declare module 'rough-viz' {
-  import { IChartConfig, IBarChart, IPieChart, ILineChart, IScatterChart, IStackedBarChart } from '@/@types'
+import { IChartConfig, IBarChart, IPieChart, ILineChart, IScatterChart, IStackedBarChart } from './@types/index';
+
+declare module '@inocan/rough-viz' {
   export class Bar {
-    constructor(config: IChartConfig<IBarChart>)
+    constructor(config: IChartConfig<IBarChart>);
   }
   export class BarH {
-    constructor(config: IChartConfig<IBarChart>)
+    constructor(config: IChartConfig<IBarChart>);
   }
   export class Donut {
-    constructor(config: IChartConfig<IPieChart>)
+    constructor(config: IChartConfig<IPieChart>);
   }
   export class Line {
-    constructor(config: IChartConfig<ILineChart>)
+    constructor(config: IChartConfig<ILineChart>);
   }
   export class Pie {
-    constructor(config: IChartConfig<IPieChart>)
+    constructor(config: IChartConfig<IPieChart>);
   }
   export class Scatter {
-    constructor(config: IChartConfig<IScatterChart>)
+    constructor(config: IChartConfig<IScatterChart>);
   }
   export class StackedBar {
-    constructor(config: IChartConfig<IStackedBarChart>)
+    constructor(config: IChartConfig<IStackedBarChart>);
   }
 }

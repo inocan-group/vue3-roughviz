@@ -1,9 +1,9 @@
-import { PropType } from 'vue'
+import { PropType } from 'vue';
 
-const DEFAULT_LABEL_FONT_SIZE = '1rem'
-const DEFAULT_HIGHLIGHT = 'coral'
-const DEFAULT_PADDING = 0.1
-const DEFAULT_STROKE = 'black'
+const DEFAULT_LABEL_FONT_SIZE = '1rem';
+const DEFAULT_HIGHLIGHT = 'coral';
+const DEFAULT_PADDING = 0.1;
+const DEFAULT_STROKE = 'black';
 const DEFAULT_COLORS = [
   'coral',
   'skyblue',
@@ -15,7 +15,7 @@ const DEFAULT_COLORS = [
   '#ffd92f',
   'tan',
   'orange',
-]
+];
 
 const axisOptions = {
   axisFontSize: { type: String, default: '1rem' },
@@ -23,7 +23,7 @@ const axisOptions = {
   axisStrokeWidth: { type: Number, default: 0.5 },
   xLabel: String,
   yLabel: String,
-}
+};
 
 const legendOptions = {
   legend: { type: Boolean, default: true },
@@ -31,7 +31,7 @@ const legendOptions = {
     type: String as PropType<'left' | 'right'>,
     default: 'right',
   },
-}
+};
 
 const commonChartOptions = {
   chartData: {
@@ -58,7 +58,7 @@ const commonChartOptions = {
   height: Number,
   margin: { type: Object as PropType<{ top: number; right: number; bottom: number; left: number }> },
   strokeWidth: { type: Number, default: 1 },
-}
+};
 
 const commonBarChartOptions = {
   ...axisOptions,
@@ -69,7 +69,7 @@ const commonBarChartOptions = {
   labelFontSize: { type: String, default: DEFAULT_LABEL_FONT_SIZE },
   padding: { type: Number, default: DEFAULT_PADDING },
   stroke: { type: String, default: DEFAULT_STROKE },
-}
+};
 
 const commonPieChartOptions = {
   ...legendOptions,
@@ -79,20 +79,20 @@ const commonPieChartOptions = {
   highlight: { type: String, default: DEFAULT_HIGHLIGHT },
   innerStrokeWidth: { type: Number, default: 0.75 },
   padding: { type: Number, default: DEFAULT_PADDING },
-}
+};
 
 const commonLineScatterChartOptions = {
   ...axisOptions,
   colors: { type: [Array, String], default: DEFAULT_COLORS },
   labelFontSize: { type: String, default: DEFAULT_LABEL_FONT_SIZE },
   stroke: { type: String, default: DEFAULT_STROKE },
-}
+};
 
 export const barChartOptions = {
   ...commonChartOptions,
   ...commonBarChartOptions,
   color: { type: String, default: 'skyblue' },
-}
+};
 
 export const stackedBarChartOptions = {
   ...commonChartOptions,
@@ -100,12 +100,12 @@ export const stackedBarChartOptions = {
   colors: Array,
   chartData: { type: Array as PropType<Record<string, string | number>[]>, required: true as const },
   labels: { type: String, required: true as const },
-}
+};
 
 export const pieChartOptions = {
   ...commonChartOptions,
   ...commonPieChartOptions,
-}
+};
 
 export const lineChartOptions = {
   ...commonChartOptions,
@@ -116,7 +116,7 @@ export const lineChartOptions = {
   circle: { type: Boolean, default: true },
   circleRadius: { type: Number, default: 10 },
   circleRoughness: { type: Number, default: 2 },
-}
+};
 
 export const scatterChartOptions = {
   ...commonChartOptions,
@@ -129,4 +129,4 @@ export const scatterChartOptions = {
   highlightLabel: String,
   innerStrokeWidth: { type: Number, default: 1 },
   radius: { type: [Number, Array] },
-}
+};

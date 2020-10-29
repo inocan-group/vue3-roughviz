@@ -9,8 +9,9 @@
     "serve": "vue-cli-service serve dev/serve.ts",
     "build": "run-s clear autoindex build:lib build:types",
     "build:lib": "node ./build/index cjs es",
-    "build:types": "echo - Building types && ttsc -P tsconfig.es.json --outDir dist/types --declaration",
+    "build:types": "echo - Building types && tsc -P tsconfig.es.json --outDir /dev/null --declaration true --declarationDir dist/typings/index.d.ts ",
     "build:docs": "yarn vitepress build docs",
+    "analyze": "cross-env ANALYZE=true node ./build/index es",
     "docs": "yarn vitepress dev docs",
     "lint": "vue-cli-service lint"
   },
@@ -18,11 +19,12 @@
   "jsdelivr": "dist/cjs/index.min.js",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "types": "dist/types/index.d.ts",
+  "typings": "dist/typings/index.d.ts",
   "files": [
     "dist"
   ],
   "devDependencies": {
+    "@inocan/rough-viz": "1.1.0",
     "@rollup/plugin-alias": "^2.2.0",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
@@ -32,7 +34,8 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^5.0.1",
     "cross-env": "^7.0.2",
-    "do-devops": "^0.4.11",
+    "d3": "6",
+    "do-devops": "^0.5.4",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-vue": "^6.2.2",
@@ -44,22 +47,21 @@
     "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-typescript2": "^0.27.3",
     "rollup-plugin-vue": "^6.0.0-beta.10",
-    "rough-viz": "inocan-group/roughViz#master",
     "tsconfig-paths": "^3.9.0",
-    "ttypescript": "^1.5.12",
     "typescript": "4",
-    "typescript-transform-paths": "^2.0.1",
     "vitepress": "^0.6.0",
     "vue": "^3",
     "vuepress-plugin-mermaidjs": "^1.8.0"
   },
   "optionalDependencies": {
-    "rough-viz": "inocan-group/roughViz#master"
+    "d3": "6",
+    "@inocan/rough-viz": "1.1.0"
   },
   "peerDependencies": {
     "vue": "3"
   },
   "engines": {
     "node": ">=10"
-  }
+  },
+  "dependencies": {}
 }

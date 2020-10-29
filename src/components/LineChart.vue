@@ -3,10 +3,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import { Line } from 'rough-viz'
-import { lineChartOptions } from '@/shared'
-import { useSetupRoughVizChart } from '@/composables'
+import { defineComponent, computed } from 'vue';
+import { Line } from 'rough-viz';
+import { lineChartOptions } from '../shared';
+import { useSetupRoughVizChart } from '../composables';
 
 export default defineComponent({
   props: {
@@ -14,23 +14,23 @@ export default defineComponent({
   },
   setup(props, context) {
     const opts = computed(() => {
-      const attrs = context.attrs
-      const ys: Record<string, string> = {}
+      const attrs = context.attrs;
+      const ys: Record<string, string> = {};
 
       // Get all numbered y axes whose name was passed as an attribute to be passed along with other props
       Object.keys(attrs).forEach(key => {
-        const value = attrs[key]
+        const value = attrs[key];
         if (/^y\d+$/.test(key) && typeof value === 'string') {
-          ys[key] = value
+          ys[key] = value;
         }
-      })
+      });
 
-      return { ...props, ...ys }
-    })
+      return { ...props, ...ys };
+    });
 
-    const chartdiv = useSetupRoughVizChart(Line, opts.value)
+    const chartdiv = useSetupRoughVizChart(Line, opts.value);
 
-    return { chartdiv }
+    return { chartdiv };
   },
-})
+});
 </script>

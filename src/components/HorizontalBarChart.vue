@@ -3,19 +3,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { BarH } from 'rough-viz'
-import { barChartOptions } from '@/shared'
-import { useSetupRoughVizChart } from '@/composables'
+import { defineComponent } from 'vue';
+import { BarH } from 'rough-viz';
+import { barChartOptions } from '../shared';
+import { useSetupRoughVizChart } from '../composables';
 
 export default defineComponent({
   props: {
     ...barChartOptions,
   },
   setup(props) {
-    const chartdiv = useSetupRoughVizChart(BarH, props)
+    const chartdiv = useSetupRoughVizChart(BarH, props);
 
-    return { chartdiv }
+    return { chartdiv };
   },
-})
+});
 </script>
