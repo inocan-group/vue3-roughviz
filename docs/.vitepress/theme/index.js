@@ -1,6 +1,5 @@
 import theme from 'vitepress/dist/client/theme-default';
-import { BarChart } from '../../../src/components/Barchart.vue';
-console.log(Object.keys(libraryComponents));
+import * as libraryComponents from '/@/components/index';
 
 export default {
   ...theme,
@@ -9,10 +8,8 @@ export default {
     // router is VitePress' custom router (see `lib/app/router.js`)
     // siteData is a ref of current site-level metadata.
 
-    app.component('BarChart', BarChart);
-
-    // for (const key in libraryComponents) {
-    //   app.component(key, libraryComponents[key]);
-    // }
+    for (const key in libraryComponents) {
+      app.component(key, libraryComponents[key]);
+    }
   },
 };

@@ -4,15 +4,16 @@
   "description": "Use the fun and informal charting capabilities of Rough-Viz charting in Vue.js",
   "license": "MIT",
   "scripts": {
+    "dev": "vite",
     "autoindex": "yarn do autoindex",
     "clear": "rimraf dist/**/*",
     "serve": "vue-cli-service serve dev/serve.ts",
     "build": "run-s clear autoindex build:lib build:types",
     "build:lib": "node ./build/index cjs es",
     "build:types": "echo - Building types && tsc -P tsconfig.es.json --outDir /dev/null --declaration true --declarationDir dist/typings/index.d.ts ",
-    "build:docs": "yarn vitepress build docs",
     "analyze": "cross-env ANALYZE=true node ./build/index es",
     "docs": "yarn vitepress dev docs",
+    "docs:build": "yarn vitepress build docs",
     "lint": "vue-cli-service lint"
   },
   "unpkg": "dist/cjs/index.min.js",
@@ -24,7 +25,6 @@
     "dist"
   ],
   "devDependencies": {
-    "@inocan/rough-viz": "1.1.0",
     "@rollup/plugin-alias": "^2.2.0",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
@@ -47,15 +47,17 @@
     "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-typescript2": "^0.27.3",
     "rollup-plugin-vue": "^6.0.0-beta.10",
+    "rough-viz": "1.1.0",
     "tsconfig-paths": "^3.9.0",
     "typescript": "4",
+    "vite": "^1.0.0-rc.9",
     "vitepress": "^0.6.0",
     "vue": "^3",
     "vuepress-plugin-mermaidjs": "^1.8.0"
   },
   "optionalDependencies": {
     "d3": "6",
-    "@inocan/rough-viz": "1.1.0"
+    "rough-viz": "1.1.0"
   },
   "peerDependencies": {
     "vue": "3"
