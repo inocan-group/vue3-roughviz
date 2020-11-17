@@ -1,7 +1,7 @@
-export { default as BarChart } from './BarChart.vue';
-export { default as DonutChart } from './DonutChart.vue';
-export { default as HorizontalBarChart } from './HorizontalBarChart.vue';
-export { default as LineChart } from './LineChart.vue';
-export { default as PieChart } from './PieChart.vue';
-export { default as ScatterChart } from './ScatterChart.vue';
-export { default as StackedBarChart } from './StackedBarChart.vue';
+export { default as Bar } from './Bar.vue';
+export { default as Donut } from './Donut.vue';
+export { default as HorizontalBar } from './HorizontalBar.vue';
+export { default as Line } from './Line.vue';
+export { default as Pie } from './Pie.vue';
+export { default as Scatter } from './Scatter.vue';
+export { default as StackedBar } from './StackedBar.vue';
