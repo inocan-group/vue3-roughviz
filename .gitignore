@@ -21,3 +21,6 @@ yarn-error.log*
 *.local
 
 docs/.vitepress/dist/*
+
+# avoid having dist files in repo; these should only go to NPM
+dist
