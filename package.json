@@ -10,7 +10,7 @@
     "serve": "vue-cli-service serve dev/serve.ts",
     "build": "run-s clear autoindex build:lib build:types",
     "build:lib": "node ./build/index cjs es",
-    "build:types": "echo - Building types && tsc -P tsconfig.es.json --outDir /dev/null --declaration true --declarationDir dist/typings/index.d.ts ",
+    "build:types": "echo - Building types && tsc -P tsconfig.es.json --declaration true --outDir dist/typings/index.d.ts  --emitDeclarationOnly",
     "analyze": "cross-env ANALYZE=true node ./build/index es",
     "docs": "yarn vitepress dev docs",
     "docs:build": "yarn vitepress build docs",
@@ -25,7 +25,7 @@
     "dist"
   ],
   "dependencies": {
-    "rough-viz": "1.0.6"
+    "@inocan/rough-viz": "^1.2.0"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^2.2.0",
@@ -48,11 +48,11 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-typescript2": "^0.27.3",
-    "rollup-plugin-vue": "^6.0.0-beta.10",
+    "rollup-plugin-vue": "^6.0.0-beta.11",
     "tsconfig-paths": "^3.9.0",
     "typescript": "4",
     "vite": "^1.0.0-rc.9",
-    "vitepress": "^0.6.0",
+    "vitepress": "^0.7.4",
     "vue": "^3"
   },
   "peerDependencies": {
