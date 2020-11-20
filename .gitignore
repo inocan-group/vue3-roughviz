@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-/dist
 storybook-static
 
 # local env files
@@ -19,3 +18,9 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+*.local
+
+docs/.vitepress/dist/*
+
+# avoid having dist files in repo; these should only go to NPM
+dist

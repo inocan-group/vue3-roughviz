@@ -1,30 +1,67 @@
 {
-  "name": "vue-visualization",
+  "name": "vue3-roughviz",
   "version": "0.1.0",
-  "private": true,
+  "description": "Use the fun and informal charting capabilities of Rough-Viz charting in Vue.js",
+  "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "autoindex": "yarn do autoindex",
+    "clear": "rimraf dist/**/*",
+    "lint": "yarn eslint --ext .js,.ts,.vue src dev build",
+    "lint:autofix": "yarn lint --fix",
+    "build": "run-s clear autoindex build:closure build:types",
+    "build:closure": "node ./build/build cjs es --min --closure",
+    "build:lib": "node ./build/build cjs es --min",
+    "build:types": "echo - Building types && tsc -P tsconfig.es.json --outDir dist/types --declaration",
+    "analyze": "cross-env ANALYZE=true node ./build/index es",
+    "docs": "yarn vitepress dev docs",
+    "docs:build": "yarn vitepress build docs"
   },
+  "unpkg": "dist/cjs/index.min.js",
+  "jsdelivr": "dist/cjs/index.min.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "@inocan/rough-viz": "^1.2.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.18.0",
-    "@typescript-eslint/parser": "^2.18.0",
-    "@vue/cli-plugin-babel": "~4.2.0",
-    "@vue/cli-plugin-eslint": "~4.2.0",
-    "@vue/cli-plugin-typescript": "~4.2.0",
-    "@vue/cli-service": "~4.2.0",
+    "@ampproject/rollup-plugin-closure-compiler": "^0.26.0",
+    "@rollup/plugin-alias": "^2.2.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-replace": "^2.3.2",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "@vue/compiler-sfc": "^3.0.2",
     "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/eslint-config-typescript": "^5.0.1",
-    "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-vue": "^6.1.2",
-    "prettier": "^1.19.1",
-    "typescript": "~3.7.5",
-    "vue-template-compiler": "^2.6.11"
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "cross-env": "^7.0.2",
+    "do-devops": "^0.5.4",
+    "eslint": "^7.10.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.2",
+    "rollup": "^2.28.2",
+    "rollup-plugin-analyzer": "^3.3.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-typescript2": "^0.27.3",
+    "rollup-plugin-vue": "6.0.0-beta.10",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "4",
+    "vite": "^1.0.0-rc.9",
+    "vitepress": "^0.7.4",
+    "vue": "^3"
+  },
+  "peerDependencies": {
+    "vue": "3"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }
