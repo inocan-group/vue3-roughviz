@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Donut } from 'rough-viz';
+import { Donut } from '@inocan/rough-viz';
 import { pieChartOptions } from '../shared';
 import { useSetupRoughVizChart } from '../composables';
 

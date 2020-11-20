@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import { Line } from 'rough-viz';
+import { Line } from '@inocan/rough-viz';
 import { lineChartOptions } from '../shared';
 import { useSetupRoughVizChart } from '../composables';
 
