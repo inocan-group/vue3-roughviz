@@ -1,8 +1,13 @@
 {
   "name": "vue3-roughviz",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use the fun and informal charting capabilities of Rough-Viz charting in Vue.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inocan-group/vue3-roughviz.git"
+  },
+  "homepage": "https://github.com/inocan-group/vue3-roughviz#readme",
   "scripts": {
     "dev": "vite",
     "autoindex": "yarn do autoindex",
