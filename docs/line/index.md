@@ -27,7 +27,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Line
 chart-data="https://raw.githubusercontent.com/jwilber/random_data/master/profits.csv"
 y1="revenue"
@@ -65,7 +64,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Line
 chart-data="https://raw.githubusercontent.com/jwilber/random_data/master/tweets.csv"
 title="Line Chart"
