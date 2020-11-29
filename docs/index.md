@@ -47,5 +47,4 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Bar :chart-data="{ labels: ['a', 'b'], values: [10, 20] }" />

@@ -27,7 +27,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Donut :chart-data="{ labels: ['a', 'b'], values: [10, 20] }" />
 
 <!-- prettier-ignore -->
@@ -65,7 +64,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Donut
 :chart-data="{
   labels: ['JNCO Jeans', 'Sweat Pants', 'Jorts'],

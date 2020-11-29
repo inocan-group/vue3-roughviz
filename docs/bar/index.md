@@ -27,7 +27,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Bar :chart-data="{ labels: ['a', 'b'], values: [10, 20] }" />
 
 <!-- prettier-ignore -->
@@ -56,7 +55,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Bar
 chart-data="https://gist.githubusercontent.com/mbostock/3310560/raw/98311dc46685ed02588afdcb69e5fa296febc1eb/letter-frequency.tsv"
 title="Letters"

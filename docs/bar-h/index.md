@@ -41,7 +41,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <BarH :chart-data="{ labels: ['a', 'b'], values: [10, 20] }" />
 
 <!-- prettier-ignore -->
@@ -78,7 +77,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <BarH
 :chart-data="$page.frontmatter.data"
 title="Vehicles I've Had"

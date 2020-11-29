@@ -27,7 +27,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Pie :chart-data="{ labels: ['a', 'b'], values: [10, 20] }" />
 
 <!-- prettier-ignore -->
@@ -62,7 +61,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Pie
 :chart-data="{
   labels: ['useful', 'no', 'lol idk man'],

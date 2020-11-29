@@ -30,7 +30,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <StackedBar :chart-data="[ {month:'Jan', A:20, B: 5}, {month:'Feb', A:25, B: 10} ]" labels="month" />
 
 <!-- prettier-ignore -->
@@ -69,7 +68,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <StackedBar
 :chart-data="[
   {month:'Jan', A:20, B: 5,  C: 10},

@@ -27,7 +27,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Scatter :chart-data="{ x: [1, 2, 35], y: [10, 20, 8] }" />
 
 <!-- prettier-ignore -->
@@ -64,7 +63,6 @@ export default defineComponent({
 </script>
 ```
 
-\
 <Scatter
 :chart-data="{
   x: [1, 2, 3, 7, 5, 9],
