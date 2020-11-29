@@ -31,7 +31,8 @@
     "dist"
   ],
   "dependencies": {
-    "@inocan/rough-viz": "^1.2.0"
+    "@inocan/rough-viz": "^1.2.0",
+    "uid": "^2.0.0"
   },
   "devDependencies": {
     "@ampproject/rollup-plugin-closure-compiler": "^0.26.0",
