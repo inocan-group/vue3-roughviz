@@ -1,6 +1,6 @@
 {
   "name": "vue3-roughviz",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Use the fun and informal charting capabilities of Rough-Viz charting in Vue.js",
   "license": "MIT",
   "repository": {
